@@ -1,0 +1,22 @@
+$width-container: 300px;
+$gap-container: 20px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
+.app {
+  width: 100%;
+  max-width: $width-container + 2 * $gap-container;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gap-container;
+  padding-left: $gap-container;
+}

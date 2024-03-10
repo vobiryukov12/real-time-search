@@ -1,0 +1,22 @@
+.emptySearch {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  &__message {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &__query {
+    font-weight: bold;
+    color: red;
+  }
+
+  &__img {
+    width: 300px;
+    height: auto;
+  }
+}

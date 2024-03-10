@@ -1,16 +1,34 @@
 import { useState } from "react";
-import { SearchForm } from "./components/SearchFrom/SearchForm";
-import { SearchContext } from "./components/SearchResults/SearchContext";
-import { SearchResults } from "./components/SearchResults/SearchResults";
-import { mockUsers } from "./mockUsers";
+
+import { useFetchData, useOnline } from "./hooks";
+import { SearchContext } from "./context";
+
+import { SearchForm, SearchResults } from "./components";
+import { NoInternet } from "./UI";
+
+import "./App.scss";
 
 export default function App() {
-  const [users] = useState(mockUsers);
+  const [inputValue, setInputValue] = useState("");
+  const [users, loading, error, debouncedValue] = useFetchData(inputValue);
+
+  const isOnline = useOnline();
+
+  const onChangeInput = (value: string) => {
+    setInputValue(value);
+  };
 
   return (
     <SearchContext.Provider value={{ users }}>
-      <SearchForm />
-      <SearchResults />
+      <div className="app">
+        {!isOnline && <NoInternet />}
+
+        <SearchForm onChangeInput={onChangeInput} />
+
+        {debouncedValue && (
+          <SearchResults {...{ loading, error, debouncedValue }} />
+        )}
+      </div>
     </SearchContext.Provider>
   );
 }

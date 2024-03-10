@@ -1,0 +1,26 @@
+.userCard {
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 300px;
+  margin-bottom: 15px;
+  padding: 20px;
+
+  background-color: azure;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+}
+
+.userPic {
+  width: 80px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
