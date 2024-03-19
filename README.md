@@ -5,7 +5,7 @@
 [real-time-search-vobiryukov12.vercel.app](https://real-time-search-vobiryukov12.vercel.app/)
 
 ## Описание
-Мини-приложение живого поиска React, которое показывает пользователей по запросу
+Мини-приложение живого поиска на React, которое показывает пользователей по запросу
 
 ### Технологии используемые на проекте:
 [![Skills](https://skillicons.dev/icons?i=react,ts,scss,vite)](https://skillicons.dev)
